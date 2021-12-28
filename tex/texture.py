@@ -3,9 +3,13 @@
 
 import cv2
 import numpy as np
-import cPickle as pkl
+import pickle as pkl
 
 from skimage.measure import compare_ssim
+import sys
+import os
+import os.path as osp
+sys.path.append(osp.join(os.getcwd(), 'tex'))
 
 from stitch.texels_fusion import Stitcher
 from iso import Isomapper

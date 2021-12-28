@@ -5,7 +5,7 @@ import os
 import cv2
 import numpy as np
 import argparse
-import cPickle as pkl
+import pickle as pkl
 
 from tqdm import trange
 
@@ -20,7 +20,6 @@ def main(unwrap_dir, segm_template_file, gmm_file, out_file, num_iter):
 
     seams = np.load('assets/basicModel_seams.npy')
     mask = cv2.imread('assets/tex_mask_1000.png', flags=cv2.IMREAD_GRAYSCALE) / 255.
-
     segm_template = read_segmentation(segm_template_file)
     gmm = pkl.load(open(gmm_file, 'rb'))
 
